@@ -19,6 +19,7 @@ export default function Home() {
         </div>
         <ProfilePic />
       </div>
+      {/* Latest Posts - create a card component */}
     </main>
   );
 }
