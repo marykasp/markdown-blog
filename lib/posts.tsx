@@ -1,6 +1,8 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { remark } from "remark";
+import html from "remark-html";
 
 // get directory where posts are stored
 const postsDirectory = path.join(process.cwd(), "blogposts");
@@ -44,4 +46,23 @@ export const getPostData = async (id: string) => {
 
   // gray matter to parse the metadata
   const matterResult = matter(fileContents);
+  // {
+  //   data: metadata,
+  //   content: blog content
+  // }
+
+  const processedContent = await remark()
+    .use(html)
+    .process(matterResult.content);
+
+  const contentHtml = processedContent.toString();
+
+  const blogPostwithHTML: BlogPost & { contentHtml: string } = {
+    id,
+    title: matterResult.data.title,
+    date: matterResult.data.date,
+    contentHtml,
+  };
+
+  return blogPostwithHTML;
 };
