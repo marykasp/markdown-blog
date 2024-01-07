@@ -48,12 +48,12 @@ const Post = async ({ params }: { params: { postId: string } }) => {
   const pubDate = getFormattedDate(date);
 
   return (
-    <main className="prose prose-base px-6 prose-zinc dark:prose-invert mx-auto mt-10">
+    <main className="prose prose-2xl px-6 prose-zinc dark:prose-invert mx-auto mt-10">
       <h1 className="text-4xl tracking-wide mt-4 mb-0">{title}</h1>
       <p className="mt-0 text-md text-blue-300 font-mono tracking-wide">
         {pubDate}
       </p>
-      <article>
+      <article className="prose-base">
         <section dangerouslySetInnerHTML={{ __html: contentHtml }} />
         <p>
           <Link href="/">Back to home</Link>
