@@ -1,3 +1,5 @@
+import { compileMDX } from "next-mdx-remote/rsc";
+
 type Filetree = {
   tree: [
     {
@@ -26,6 +28,29 @@ export const getPostByName = async (
   const rawMDX = await res.text();
 
   if (rawMDX === "404: Not Found") return undefined;
+
+  const { frontmatter, content } = await compileMDX<{
+    title: string;
+    date: string;
+    tags: string[];
+  }>({
+    source: rawMDX,
+  });
+
+  // get id w/o mdx
+  const id = fileName.replace(/\.mdx$/, "");
+
+  const blogPostObj: BlogPost = {
+    meta: {
+      id,
+      title: frontmatter.title,
+      date: frontmatter.date,
+      tags: frontmatter.tags,
+    },
+    content,
+  };
+
+  return blogPostObj;
 };
 
 export const getPostsMeta = async (): Promise<Meta[] | undefined> => {
