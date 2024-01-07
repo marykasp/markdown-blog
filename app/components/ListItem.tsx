@@ -14,7 +14,7 @@ const ListItem = ({ post }: Props) => {
     <li className="xs:border-none xs:p-0 border border-1 rounded-md border-zinc-800 p-4 bg-transparent hover:bg-zinc-700">
       {/* metadata image from post */}
       <div>
-        <p className="text-sm text-gray-300 font-mono tracking-wide">
+        <p className="text-sm text-blue-300 font-mono tracking-wide">
           {formattedDate}
         </p>
 

@@ -12,7 +12,8 @@ const Posts = () => {
         Latest Posts
       </h2>
       <ul className="w-full mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-        {posts.map((post) => (
+        {/* display only 4 most recent posts */}
+        {posts.slice(0, 4).map((post) => (
           <ListItem post={post} key={post.id} />
         ))}
       </ul>

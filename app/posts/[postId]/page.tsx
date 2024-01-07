@@ -1,5 +1,15 @@
-import { getSortedPostsData } from "../../../lib/posts";
+import getFormattedDate from "../../../lib/getFormattedDate";
+import { getPostData, getSortedPostsData } from "../../../lib/posts";
 import { notFound } from "next/navigation";
+import Link from "next/link";
+
+export function generateStaticParams() {
+  const posts = getSortedPostsData();
+
+  return posts.map((post) => ({
+    postId: post.id,
+  }));
+}
 
 export const generateMetadata = ({
   params,
@@ -33,7 +43,24 @@ const Post = async ({ params }: { params: { postId: string } }) => {
     return notFound();
   }
 
-  return <div>page</div>;
+  const { title, date, contentHtml } = await getPostData(postId);
+
+  const pubDate = getFormattedDate(date);
+
+  return (
+    <main className="prose prose-base px-6 prose-zinc dark:prose-invert mx-auto mt-10">
+      <h1 className="text-4xl tracking-wide mt-4 mb-0">{title}</h1>
+      <p className="mt-0 text-md text-blue-300 font-mono tracking-wide">
+        {pubDate}
+      </p>
+      <article>
+        <section dangerouslySetInnerHTML={{ __html: contentHtml }} />
+        <p>
+          <Link href="/">Back to home</Link>
+        </p>
+      </article>
+    </main>
+  );
 };
 
 export default Post;

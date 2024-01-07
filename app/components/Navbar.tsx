@@ -14,7 +14,6 @@ const Navbar = () => {
             MaryK.
           </Link>
         </h1>
-        {/* social icons row */}
         <div className="flex flex-row justify-center align-middle items-center sm:justify-evenly gap-4 text-white text-2xl lg:text-3xl">
           <Link
             className="text-white/90 hover:text-white"
