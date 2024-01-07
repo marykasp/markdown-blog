@@ -6,6 +6,7 @@ import matter from "gray-matter";
 const postsDirectory = path.join(process.cwd(), "blogposts");
 console.log(postsDirectory);
 
+// get a list of all posts - sort by date
 export function getSortedPostsData() {
   // get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);

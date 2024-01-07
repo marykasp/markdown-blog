@@ -1,4 +1,5 @@
 import ProfilePic from "./components/ProfilePic";
+import Posts from "./components/Posts";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <ProfilePic />
       </div>
       {/* Latest Posts - create a card component */}
+      <Posts />
     </main>
   );
 }
