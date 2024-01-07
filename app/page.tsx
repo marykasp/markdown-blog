@@ -1,9 +1,10 @@
 import ProfilePic from "./components/ProfilePic";
 import Posts from "./components/Posts";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="sm:p-6 md:p-0 mx-auto mt-6 max-w-4xl">
+    <section className="">
       <div className="flex xs:flex-col md:flex-row justify-between items-center gap-10">
         <div id="hero-info" className="xs:order-last md:order-first">
           <h1 className="my-12 text-5xl tracking-wider dark:text-white font-bold">
@@ -11,7 +12,14 @@ export default function Home() {
           </h1>
           <div>
             <p className=" mb-3 text-neutral-300 ">
-              Welcome to my digital space. 🌱
+              Welcome to my digital space.{"  "}
+              <Image
+                src="/images/animal-2.svg"
+                alt="Mary Kasparian"
+                width={20}
+                height={20}
+                className="inline-block"
+              />
             </p>
             <p className="text-neutral-300 text-md">
               I&apos;m a software developer in Chicago. I make open-source
@@ -24,6 +32,6 @@ export default function Home() {
       </div>
       {/* Latest Posts - create a card component */}
       <Posts />
-    </main>
+    </section>
   );
 }

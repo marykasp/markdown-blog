@@ -11,7 +11,7 @@ const Navbar = () => {
             href="/"
             className="text-white no-underline hover:text-[#ACB8C0]"
           >
-            MaryK.
+            Mary<span className="text-blue-300">K.</span>
           </Link>
         </h1>
         <div className="flex flex-row justify-center align-middle items-center sm:justify-evenly gap-4 text-white text-2xl lg:text-3xl">
