@@ -7,7 +7,10 @@ const Navbar = () => {
       {/* keep same width of article */}
       <div className="prose prose-xl mx-auto flex justify-between align-middle flex-col sm:flex-row">
         <h1 className="text-3xl font-bold text-white grid place-content-center mb-2 md:mb-0">
-          <Link href="/" className="text-white no-underline hover:text-sky-500">
+          <Link
+            href="/"
+            className="text-white no-underline hover:text-[#ACB8C0]"
+          >
             MaryK.
           </Link>
         </h1>

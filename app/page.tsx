@@ -9,7 +9,7 @@ export default function Home() {
             <span>Hi</span> I&apos;m Mary!
           </h1>
           <div>
-            <p className="text-white mb-3">Welcome to my digital garden. 🌱</p>
+            <p className="text-white mb-3">Welcome to my digital space. 🌱</p>
             <p className="text-white">
               I&apos;m a software developer in Chicago. I make open-source
               projects and write about code, design, and life. I like cozy video
