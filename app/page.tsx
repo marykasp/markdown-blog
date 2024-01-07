@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <section className="">
+    <section>
       <div className="flex xs:flex-col md:flex-row justify-between items-center gap-10">
         <div id="hero-info" className="xs:order-last md:order-first">
           <h1 className="my-12 text-5xl tracking-wider dark:text-white font-bold">
@@ -31,6 +31,7 @@ export default function Home() {
         <ProfilePic />
       </div>
       {/* Latest Posts - create a card component */}
+      {/* @ts-expect-error Server Component */}
       <Posts />
     </section>
   );

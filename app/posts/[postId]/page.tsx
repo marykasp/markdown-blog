@@ -48,7 +48,7 @@ const Post = async ({ params }: { params: { postId: string } }) => {
   const pubDate = getFormattedDate(date);
 
   return (
-    <main className="prose prose-2xl px-6 prose-zinc dark:prose-invert mx-auto mt-10">
+    <main className="prose prose-2xl prose-zinc dark:prose-invert mx-auto mt-10">
       <h1 className="text-4xl tracking-wide mt-4 mb-0">{title}</h1>
       <p className="mt-0 text-md text-blue-300 font-mono tracking-wide">
         {pubDate}

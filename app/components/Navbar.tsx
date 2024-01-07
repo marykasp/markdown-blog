@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav className="bg-zinc-800 p-4 sticky top-0 drop-shadow-xl z-10">
       {/* keep same width of article */}
-      <div className="max-w-4xl mx-auto flex justify-between align-middle sm:flex-row">
+      <div className="md:px-6 max-w-4xl mx-auto flex justify-between align-middle sm:flex-row">
         <h1 className="text-3xl font-bold text-white grid place-content-center mb-2 md:mb-0">
           <Link
             href="/"
