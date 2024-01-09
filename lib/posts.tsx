@@ -35,6 +35,9 @@ export const getPostByName = async (
     tags: string[];
   }>({
     source: rawMDX,
+    options: {
+      parseFrontmatter: true,
+    },
   });
 
   // get id w/o mdx

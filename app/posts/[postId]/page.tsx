@@ -1,25 +1,30 @@
 import getFormattedDate from "../../../lib/getFormattedDate";
-import { getPostData, getSortedPostsData } from "../../../lib/posts";
+import { getPostsMeta, getPostByName } from "../../../lib/posts";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
-export function generateStaticParams() {
-  const posts = getSortedPostsData();
+// route segment config - not cache anything, server side rendered
+export const revalidate = 0;
 
-  return posts.map((post) => ({
-    postId: post.id,
-  }));
-}
+type Props = {
+  params: {
+    postId: string;
+  };
+};
 
-export const generateMetadata = ({
-  params,
-}: {
-  params: { postId: string };
-}) => {
-  const posts = getSortedPostsData(); //deduped!
-  const { postId } = params;
+// export async function generateStaticParams() {
+//   const posts = await getPostsMeta(); // deduplicated during build
 
-  const post = posts.find((post) => post.id === postId);
+//   if (!posts) return [];
+
+//   // return a list of posts ids
+//   return posts.map((post) => ({
+//     postId: post.id,
+//   }));
+// }
+
+export const generateMetadata = async ({ params: { postId } }: Props) => {
+  const post = await getPostByName(`${postId}.mdx`); //deduped!
 
   // would be title for custom 404 page if post is not found
   if (!post) {
@@ -29,36 +34,41 @@ export const generateMetadata = ({
   }
 
   return {
-    title: post.title,
+    title: post.meta.title,
   };
 };
 
-const Post = async ({ params }: { params: { postId: string } }) => {
-  // import list of all posts
-  const posts = getSortedPostsData(); //deduped!
-  const { postId } = params;
+const Post = async ({ params: { postId } }: Props) => {
+  const post = await getPostByName(`${postId}.mdx`); //deduped!
 
-  // check existing posts for postID - return not found if doesn't exist
-  if (!posts.find((post) => post.id === postId)) {
-    return notFound();
-  }
+  if (!post) notFound();
 
-  const { title, date, contentHtml } = await getPostData(postId);
+  const { meta, content } = post;
 
-  const pubDate = getFormattedDate(date);
+  // extract out date and tags from meta object on BlogPost type
+  const pubDate = getFormattedDate(meta.date);
+  const tags = meta.tags.map((tag, index) => (
+    <Link href={`/tags/${tag}`} key={index}>
+      {tag}
+    </Link>
+  ));
 
   return (
-    <main className="prose prose-2xl prose-zinc dark:prose-invert mx-auto mt-10">
-      <h1 className="text-4xl tracking-wide mt-4 mb-0">{title}</h1>
+    // <main className="prose prose-2xl prose-zinc dark:prose-invert mx-auto mt-10">
+    <main>
+      <h2 className="text-4xl tracking-wide mt-4 mb-0">{meta.title}</h2>
       <p className="mt-0 text-md text-blue-300 font-mono tracking-wide">
         {pubDate}
       </p>
-      <article className="prose-base">
-        <section dangerouslySetInnerHTML={{ __html: contentHtml }} />
-        <p>
-          <Link href="/">Back to home</Link>
-        </p>
-      </article>
+      <article className="prose-base">{content}</article>
+      <section>
+        <h3>Related posts:</h3>
+        {/* link to similar blog poss */}
+        <div className="flex flex-row gap-4">{tags}</div>
+      </section>
+      <p className="mb-10">
+        <Link href="/">Back to home</Link>
+      </p>
     </main>
   );
 };
