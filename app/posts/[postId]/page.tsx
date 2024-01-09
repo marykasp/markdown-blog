@@ -47,6 +47,7 @@ const Post = async ({ params: { postId } }: Props) => {
 
   // extract out date and tags from meta object on BlogPost type
   const pubDate = getFormattedDate(meta.date);
+  console.log(meta.tags);
   const tags = meta.tags.map((tag, index) => (
     <Link href={`/tags/${tag}`} key={index}>
       {tag}
@@ -54,8 +55,7 @@ const Post = async ({ params: { postId } }: Props) => {
   ));
 
   return (
-    // <main className="prose prose-2xl prose-zinc dark:prose-invert mx-auto mt-10">
-    <main>
+    <div className="prose prose-2xl prose-zinc dark:prose-invert  mt-10">
       <h2 className="text-4xl tracking-wide mt-4 mb-0">{meta.title}</h2>
       <p className="mt-0 text-md text-blue-300 font-mono tracking-wide">
         {pubDate}
@@ -69,7 +69,7 @@ const Post = async ({ params: { postId } }: Props) => {
       <p className="mb-10">
         <Link href="/">Back to home</Link>
       </p>
-    </main>
+    </div>
   );
 };
 
