@@ -8,46 +8,32 @@ const Navigation = () => {
   const pathname = usePathname();
 
   return (
-    <ul className="flex justify-between items-center w-2/5 text-white">
-      <li
-        className={`hover:text-blue-300 hover:border-blue-300 p-2 ${
-          pathname === "/" ? "border-b-2 border-blue-300" : "border-none"
+    <div className="relative flex justify-between items-center w-2/5 text-white font-bold tracking-[1px]">
+      <Link
+        href="/"
+        className={`hover:text-blue-300 ${
+          pathname === "/" ? "font-semibold" : "text-white"
         }`}
       >
-        <Link
-          href="/"
-          className={`${pathname === "/" ? "font-semibold" : "text-white"}`}
-        >
-          Home
-        </Link>
-      </li>
-      <li
-        className={`hover:text-pink-400 p-2 ${
-          pathname === "/about" ? "border-b-2 border-pink-400" : "border-none"
+        Home
+      </Link>
+      <Link
+        href="/about"
+        className={`hover:text-pink-400 ${
+          pathname === "/about" ? "font-semibold" : "text-white"
         }`}
       >
-        <Link
-          href="/about"
-          className={`${
-            pathname === "/about" ? "font-semibold" : "text-white"
-          }`}
-        >
-          About
-        </Link>
-      </li>
-      <li
-        className={`p-2 ${
-          pathname === "/blog" ? "border-b-2 border-lime-400" : "border-none"
+        About
+      </Link>
+      <Link
+        href="/blog"
+        className={`hover:text-yellow-400 ${
+          pathname === "/blog" ? "font-semibold" : "text-white"
         }`}
       >
-        <Link
-          href="/blog"
-          className={`${pathname === "/blog" ? "font-semibold" : "text-white"}`}
-        >
-          Blog
-        </Link>
-      </li>
-    </ul>
+        Blog
+      </Link>
+    </div>
   );
 };
 
