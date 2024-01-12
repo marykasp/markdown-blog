@@ -6,6 +6,7 @@ import Link from "next/link";
 export const revalidate = 0;
 
 type Props = {
+  // an object of tags with key:value pairs
   params: {
     tag: string;
   };
@@ -23,3 +24,9 @@ type Props = {
 //   // need an array of objects - map over array of tags - create object (key:value)
 //   return Array.from(tags).map((tag) => ({ tag }));
 // }
+
+export function generateMetadata({ params: { tag } }: Props) {
+  return {
+    title: `Posts about ${tag}`,
+  };
+}
