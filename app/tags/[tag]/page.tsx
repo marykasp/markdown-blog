@@ -30,3 +30,44 @@ export function generateMetadata({ params: { tag } }: Props) {
     title: `Posts about ${tag}`,
   };
 }
+
+const TagPostList = async ({ params: { tag } }: Props) => {
+  // get meta data of all posts
+  const posts = await getPostsMeta();
+
+  if (!posts)
+    return <p className="mt-10 text-center">Sorry, no pasts with that {tag}</p>;
+
+  // return a list of posts metadata that includes the tag that matches the param
+  const tagPosts = posts.filter((post) => post.tags.includes(tag));
+
+  // if none match return this this ui to say none match
+  if (!tagPosts.length) {
+    return (
+      <div className="text-center">
+        <div className="mt-10">Sorry, no posts for those keywords</div>
+        <Link href="/">Back to Home</Link>
+      </div>
+    );
+  }
+
+  return (
+    <div className="mt-10">
+      <h2 className="text-xl text-white">
+        Results for:{" "}
+        <span className="bg-blue-500 text-white p-2 rounded-sm text-sm">
+          {tag}
+        </span>
+      </h2>
+      <section className="w-full max-w-4xl">
+        <ul className="w-full list-none py-6 ">
+          {tagPosts.map((post) => (
+            <ListItem key={post.id} post={post} />
+          ))}
+        </ul>
+      </section>
+    </div>
+  );
+};
+
+export default TagPostList;

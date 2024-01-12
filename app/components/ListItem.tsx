@@ -19,7 +19,7 @@ const ListItem = ({ post }: Props) => {
 
         <Link
           href={`/posts/${id}`}
-          className="mt-1 inline-block text-md hover:text-black/70 dark:hover:text-white hover:underline"
+          className="text-white mt-1 inline-block text-md hover:text-black/70 dark:hover:text-white hover:underline"
         >
           {title}
         </Link>
