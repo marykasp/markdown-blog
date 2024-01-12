@@ -22,7 +22,7 @@ export default function Home() {
                 className="inline-block"
               />
             </p>
-            <p className="dark:text-neutral-300 text-md">
+            <p className="dark:text-neutral-300 text-zinc-800 text-md">
               I&apos;m a software developer in Chicago. I make open-source
               projects and write about code, design, and life. I like cozy video
               games, journaling, fantasy, reading, and coding.

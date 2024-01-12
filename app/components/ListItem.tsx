@@ -10,7 +10,7 @@ const ListItem = ({ post }: Props) => {
   const formattedDate = getFormattedDate(date);
 
   return (
-    <li className="xs:border-none xs:p-0 border border-1 rounded-md dark:border-zinc-800 border-neutral-300 p-4 bg-transparent hover:bg-zinc-700">
+    <li className="xs:border-none xs:p-0 border border-1 rounded-md dark:border-zinc-800 border-neutral-300 p-4 bg-transparent hover:bg-neutral-200 dark:hover:bg-zinc-700">
       {/* metadata image from post */}
       <div>
         <p className="text-sm dark:text-blue-300 text-blue-500 font-mono tracking-wide">

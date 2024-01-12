@@ -2,12 +2,14 @@ import Link from "next/link";
 
 const About = () => {
   return (
-    <main className="text-neutral-200 mt-6">
+    <main className="dark:text-neutral-200 mt-6">
       <article className="flex flex-col gap-4">
         <div>
           {/* image of wolf and archer */}
           <div className="flex flex-col gap-4 ">
-            <h2 className="text-2xl text-white font-semibold mb-6">About me</h2>
+            <h2 className="text-2xl dark:text-white font-semibold mb-6">
+              About me
+            </h2>
 
             <p className="text-base ">
               Hello there! 👋 I&apos;m Mary, a passionate software engineer
@@ -27,7 +29,7 @@ const About = () => {
             </ul>
           </div>
         </div>
-        <h3 className="text-xl font-semibold text-white">
+        <h3 className="text-xl font-semibold dark:text-white">
           From Scientist to Coder
         </h3>
         <p>
@@ -37,7 +39,7 @@ const About = () => {
           towards the world of coding, embracing the dynamic challenges and
           endless possibilities of front-end development.
         </p>
-        <h3 className="text-xl font-semibold text-white">
+        <h3 className="text-xl font-semibold dark:text-white">
           Embracing Cozy Comforts
         </h3>
         <p>

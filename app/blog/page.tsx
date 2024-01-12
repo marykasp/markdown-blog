@@ -8,7 +8,9 @@ const Blog = async () => {
 
   return (
     <>
-      <h2 className="text-white font-bold text-2xl my-6">List of All Posts</h2>
+      <h2 className="dark:text-white font-bold text-2xl my-6">
+        List of All Posts
+      </h2>
       <section className="w-full max-w-4xl">
         <ul className="w-full flex flex-col gap-4">
           {posts.map((post) => (

@@ -8,27 +8,27 @@ const Navigation = () => {
   const pathname = usePathname();
 
   return (
-    <div className="relative flex justify-between items-center w-2/5 text-white font-bold tracking-[1px]">
+    <div className="relative flex justify-between items-center w-2/5 dark:text-white text-zinc-800 font-bold tracking-[1px]">
       <Link
         href="/"
-        className={`hover:text-blue-300 ${
-          pathname === "/" ? "font-semibold" : "text-white"
+        className={`dark:hover:text-blue-300 hover:text-blue-500 ${
+          pathname === "/" ? "font-semibold" : "dark:text-white"
         }`}
       >
         Home
       </Link>
       <Link
         href="/about"
-        className={`hover:text-pink-400 ${
-          pathname === "/about" ? "font-semibold" : "text-white"
+        className={`dark:hover:text-pink-300 hover:text-pink-500 ${
+          pathname === "/about" ? "font-semibold" : "dark:text-white"
         }`}
       >
         About
       </Link>
       <Link
         href="/blog"
-        className={`hover:text-yellow-400 ${
-          pathname === "/blog" ? "font-semibold" : "text-white"
+        className={`dark:hover:text-yellow-400 hover:text-yellow-700 ${
+          pathname === "/blog" ? "font-semibold" : "dark:text-white"
         }`}
       >
         Blog
