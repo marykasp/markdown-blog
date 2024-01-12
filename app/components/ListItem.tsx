@@ -16,7 +16,6 @@ const ListItem = ({ post }: Props) => {
         <p className="text-sm text-blue-300 font-mono tracking-wide">
           {formattedDate}
         </p>
-
         <Link
           href={`/posts/${id}`}
           className="text-white mt-1 inline-block text-md hover:text-black/70 dark:hover:text-white hover:underline"
