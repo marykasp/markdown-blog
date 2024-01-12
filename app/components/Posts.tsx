@@ -5,7 +5,6 @@ import ListItem from "./ListItem";
 const Posts = async () => {
   // get meta data from all the posts
   const posts = await getPostsMeta();
-  console.log(posts);
 
   if (!posts) {
     return <p className="mt-10 text-center">Sorry, no posts available</p>;

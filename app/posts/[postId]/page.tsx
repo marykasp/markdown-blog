@@ -47,9 +47,24 @@ const Post = async ({ params: { postId } }: Props) => {
 
   // extract out date and tags from meta object on BlogPost type
   const pubDate = getFormattedDate(meta.date);
-  console.log(meta.tags);
+  // console.log(meta.tags);
+
+  // object to match name of tag with a color
+  // const tagColors: TagColors = {
+  //   typescript: `bg-blue-500`,
+  //   javascript: `bg-yellow-500`,
+  //   react: `bg-purple-500`,
+  //   git: `bg-zinc-500`,
+  // };
+
   const tags = meta.tags.map((tag, index) => (
-    <Link href={`/tags/${tag}`} key={index}>
+    <Link
+      href={`/tags/${tag}`}
+      key={index}
+      className={`${
+        tag === "typescript" ? `bg-blue-500` : `bg-yellow-500`
+      } rounded-sm  text-white text-sm px-4 py-1 no-underline font-normal`}
+    >
       {tag}
     </Link>
   ));

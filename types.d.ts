@@ -9,3 +9,10 @@ type BlogPost = {
   meta: Meta;
   content: ReactElement<any, string | JSXElementConstructor<any>>;
 };
+
+type TagColors = {
+  typescript: string;
+  javascript: string;
+  react: string;
+  git: string;
+};
