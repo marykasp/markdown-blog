@@ -7,7 +7,6 @@ type Props = {
 
 const ListItem = ({ post }: Props) => {
   const { id, title, date } = post;
-  // formatted date
   const formattedDate = getFormattedDate(date);
 
   return (
