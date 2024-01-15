@@ -1,5 +1,6 @@
 import { getPostsMeta } from "../../lib/posts";
 import ListItem from "../components/ListItem";
+import PostListItem from "../components/PostListItem";
 
 const Blog = async () => {
   const posts = await getPostsMeta();
@@ -8,13 +9,11 @@ const Blog = async () => {
 
   return (
     <>
-      <h2 className="dark:text-white font-bold text-2xl my-6">
-        List of All Posts
-      </h2>
+      <h2 className="dark:text-white font-bold text-2xl my-6">Writings</h2>
       <section className="w-full max-w-4xl">
         <ul className="w-full flex flex-col gap-4">
           {posts.map((post) => (
-            <ListItem key={post.id} post={post} />
+            <PostListItem key={post.id} post={post} />
           ))}
         </ul>
       </section>
