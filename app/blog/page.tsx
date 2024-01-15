@@ -1,5 +1,4 @@
 import { getPostsMeta } from "../../lib/posts";
-import ListItem from "../components/ListItem";
 import PostListItem from "../components/PostListItem";
 
 const Blog = async () => {

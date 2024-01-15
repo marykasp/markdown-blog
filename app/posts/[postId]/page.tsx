@@ -2,6 +2,7 @@ import getFormattedDate from "../../../lib/getFormattedDate";
 import { getPostsMeta, getPostByName } from "../../../lib/posts";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Button from "../../components/Button";
 import "highlight.js/styles/base16/ashes.css";
 
 // route segment config - not cache anything, server side rendered
@@ -69,12 +70,16 @@ const Post = async ({ params: { postId } }: Props) => {
       </p>
       <article className="prose-base">{content}</article>
       <section>
-        <h3>Related posts:</h3>
+        <h3 className="text-sm tracking-wide">Related posts:</h3>
         {/* link to similar blog poss */}
         <div className="flex flex-row gap-4">{tags}</div>
       </section>
       <p className="mb-10">
-        <Link href="/">Back to home</Link>
+        <Button>
+          <Link href="/" className="no-underline">
+            Back to home
+          </Link>
+        </Button>
       </p>
     </div>
   );
