@@ -17,7 +17,7 @@ const Posts = async () => {
         <h2 className="text-3xl font-semibold">Latest Posts</h2>
         <Link
           href="/blog"
-          className="p-2 bg-blue-500 text-white dark:bg-blue-300 rounded-sm text-sm"
+          className="p-2 bg-blue-500 text-white dark:bg-blue-300 dark:text-zinc-700 rounded-sm text-sm"
         >
           View All
         </Link>
