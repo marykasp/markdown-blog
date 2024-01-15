@@ -2,7 +2,7 @@ import ProfilePic from "./components/ProfilePic";
 import Posts from "./components/Posts";
 import Image from "next/image";
 
-export const revalidate = 10;
+export const revalidate = 86400; /* 1 day */
 
 export default function Home() {
   return (

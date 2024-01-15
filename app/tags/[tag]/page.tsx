@@ -3,7 +3,7 @@ import { getPostsMeta } from "../../../lib/posts";
 import ListItem from "../../components/ListItem";
 import Link from "next/link";
 
-export const revalidate = 10;
+export const revalidate = 86400;
 
 type Props = {
   // an object of tags with key:value pairs

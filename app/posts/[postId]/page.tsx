@@ -6,7 +6,7 @@ import Button from "../../components/Button";
 import "highlight.js/styles/base16/ashes.css";
 
 // route segment config - not cache anything, server side rendered
-export const revalidate = 10;
+export const revalidate = 86400;
 
 type Props = {
   params: {
