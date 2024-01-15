@@ -53,14 +53,14 @@ const TagPostList = async ({ params: { tag } }: Props) => {
 
   return (
     <div className="mt-10">
-      <h2 className="text-xl ">
+      <h2 className="text-xl dark:text-white">
         Results for:{" "}
-        <span className="bg-blue-500 text-white p-2 rounded-sm text-sm">
+        <span className="bg-blue-500 dark:text-white p-2 rounded-sm text-sm">
           {tag}
         </span>
       </h2>
       <section className="w-full max-w-4xl">
-        <ul className="w-full list-none py-6 ">
+        <ul className="w-full list-none py-6 flex flex-col gap-4">
           {tagPosts.map((post) => (
             <ListItem key={post.id} post={post} />
           ))}

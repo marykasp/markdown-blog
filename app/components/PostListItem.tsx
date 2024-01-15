@@ -13,10 +13,10 @@ const PostListItem = ({ post }: Props) => {
   const date = `${month} ${day}`;
 
   return (
-    <li className="border-b border-gray-200 pb-2">
+    <li className="border-b border-gray-200 dark:border-zinc-700 pb-2">
       <Link
         href={`/posts/${post.id}`}
-        className="flex items-center justify-between hover:text-blue-500"
+        className="flex items-center justify-between hover:text-blue-500 dark:hover:text-blue-300 dark:text-white"
       >
         <h3 className="font-semibold text-md">{post.title}</h3>
         <time className="text-blue-500 font-bold text-sm">{date}</time>
