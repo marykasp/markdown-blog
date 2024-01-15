@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaYoutube, FaLinkedin, FaGithub, FaLaptop } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaLaptop } from "react-icons/fa";
 import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
@@ -18,25 +18,22 @@ const Navbar = () => {
         <div className="flex flex-row justify-center align-middle items-center sm:justify-evenly gap-4 dark:text-white text-zinc-800 text-md lg:text-xl">
           <Link
             className="dark:text-white/90 dark:hover:text-white hover:text-blue-500"
-            href="https://www.youtube.com"
-          >
-            <FaYoutube />
-          </Link>
-          <Link
-            className="dark:text-white/90 dark:hover:text-white hover:text-blue-500"
             href="https://www.marykasparian.com"
+            target="_blank"
           >
             <FaLaptop />
           </Link>
           <Link
             className="dark:text-white/90 dark:hover:text-white hover:text-blue-500"
             href="https://www.github.com/marykasp"
+            target="_blank"
           >
             <FaGithub />
           </Link>
           <Link
             className="dark:text-white/90 dark:hover:text-white hover:text-blue-500"
             href="https://www.linkedin.com/mary-kasparian"
+            target="_blank"
           >
             <FaLinkedin />
           </Link>
