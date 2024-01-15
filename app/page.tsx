@@ -2,6 +2,8 @@ import ProfilePic from "./components/ProfilePic";
 import Posts from "./components/Posts";
 import Image from "next/image";
 
+export const revalidate = 10;
+
 export default function Home() {
   return (
     <section>
@@ -31,8 +33,6 @@ export default function Home() {
         </div>
         <ProfilePic />
       </div>
-      {/* Latest Posts - create a card component */}
-      {/* @ts-expect-error Server Component */}
       <Posts />
     </section>
   );

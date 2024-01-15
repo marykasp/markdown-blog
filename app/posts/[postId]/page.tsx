@@ -6,7 +6,7 @@ import Button from "../../components/Button";
 import "highlight.js/styles/base16/ashes.css";
 
 // route segment config - not cache anything, server side rendered
-export const revalidate = 0;
+export const revalidate = 10;
 
 type Props = {
   params: {
@@ -14,16 +14,16 @@ type Props = {
   };
 };
 
-// export async function generateStaticParams() {
-//   const posts = await getPostsMeta(); // deduplicated during build
+export async function generateStaticParams() {
+  const posts = await getPostsMeta(); // deduplicated during build
 
-//   if (!posts) return [];
+  if (!posts) return [];
 
-//   // return a list of posts ids
-//   return posts.map((post) => ({
-//     postId: post.id,
-//   }));
-// }
+  // return a list of posts ids
+  return posts.map((post) => ({
+    postId: post.id,
+  }));
+}
 
 export const generateMetadata = async ({ params: { postId } }: Props) => {
   const post = await getPostByName(`${postId}.mdx`); //deduped!
@@ -49,6 +49,7 @@ const Post = async ({ params: { postId } }: Props) => {
 
   // extract out date and tags from meta object on BlogPost type
   const pubDate = getFormattedDate(meta.date);
+  // console.log(meta.tags);
 
   const tags = meta.tags.map((tag, index) => (
     <Link
