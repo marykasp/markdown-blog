@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { FaYoutube, FaLinkedin, FaGithub, FaLaptop } from "react-icons/fa";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   return (
-    <nav className="dark:bg-zinc-800 bg-neutral-100 p-4 sticky top-0 dark:drop-shadow-xl border-bottom border-neutral-400 z-10">
+    <nav className="dark:bg-zinc-800 bg-white p-4 sticky top-0 dark:drop-shadow-xl border-bottom border-neutral-400 z-10">
       {/* keep same width of article */}
-      <div className="md:px-6 max-w-4xl mx-auto flex justify-between align-middle sm:flex-row">
+      <div className="md:px-6 max-w-4xl mx-auto flex justify-between align-middle items-center sm:flex-row">
         <h1 className="text-3xl font-bold dark:text-white text-zinc-800 grid place-content-center mb-2 md:mb-0">
           <Link
             href="/"
@@ -40,6 +41,7 @@ const Navbar = () => {
             <FaLinkedin />
           </Link>
         </div>
+        <ThemeToggle />
       </div>
     </nav>
   );

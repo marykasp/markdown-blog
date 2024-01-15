@@ -53,7 +53,7 @@ const TagPostList = async ({ params: { tag } }: Props) => {
 
   return (
     <div className="mt-10">
-      <h2 className="text-xl text-white">
+      <h2 className="text-xl ">
         Results for:{" "}
         <span className="bg-blue-500 text-white p-2 rounded-sm text-sm">
           {tag}

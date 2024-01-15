@@ -22,8 +22,8 @@ const About = () => {
               You can contact me by email say hi! I always appreciate meeting
               new people.
             </p>
-            <ul className="list-disc">
-              <li>
+            <ul className="list-none">
+              <li className="hover:text-blue-500 hover:font-semibold">
                 <Link href="https://www.github.com/marykasp">Github</Link>
               </li>
             </ul>
@@ -44,17 +44,31 @@ const About = () => {
         </h3>
         <p>
           Comforts Beyond the lines of code, I find solace and joy in the cozy
-          corners of life. 📚✨ I&apos;m an avid enthusiast of all things snug
-          and cozy – from immersing myself in captivating video games that whisk
-          me away to fantastical realms, to diving into the enchanting worlds of
-          fantasy books that ignite my imagination. My Cozy Interests: Video
-          Games: Discovering hidden gems in cozy, immersive gaming worlds is my
-          ultimate downtime delight. 🎮✨ Fantasy Worlds: Lost in the pages of
-          magical tales, I traverse through captivating narratives and embark on
-          epic adventures. 📖🌌 Books: Whether it&apos;s losing myself in a
-          fantasy epic or exploring new ideas in non-fiction, books are my
-          constant companions. 📚🌟
+          corners of life. I&apos;m an avid enthusiast of all things snug and
+          cozy – from immersing myself in captivating video games that whisk me
+          away to fantastical realms, to diving into the enchanting worlds of
+          fantasy books that ignite my imagination.
         </p>
+        <h3 className="font-medium tracking-wider uppercase text-blue-500 dark:text-blue-300">
+          My Cozy Interests
+        </h3>
+        <ol className="list-decimal flex flex-col gap-2">
+          <li>
+            <span className="font-bold">Video Games</span>: Discovering hidden
+            gems in cozy, immersive gaming worlds is my ultimate downtime
+            delight. 🎮
+          </li>
+          <li>
+            <span className="font-bold">Fantasy Worlds:</span>
+            Lost in the pages of magical tales, I traverse through captivating
+            narratives and embark on epic adventures.
+          </li>
+          <li>
+            <span className="font-bold">Books:</span>
+            Whether it&apos;s losing myself in a fantasy epic or exploring new
+            ideas in non-fiction, books are my constant companions.
+          </li>
+        </ol>
       </article>
     </main>
   );
