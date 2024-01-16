@@ -1,16 +1,16 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const About = () => {
   return (
     <main className="dark:text-neutral-200 mt-6">
       <article className="flex flex-col gap-4">
-        <div>
+        <div className="flex items-center justify-between">
           {/* image of wolf and archer */}
           <div className="flex flex-col gap-4 ">
             <h2 className="text-2xl dark:text-white font-semibold mb-6">
               About me
             </h2>
-
             <p className="text-base ">
               Hello there! 👋 I&apos;m Mary, a passionate software engineer
               based in the lively city of Chicago. 🌆 My journey into the tech
@@ -22,12 +22,25 @@ const About = () => {
               You can contact me by email say hi! I always appreciate meeting
               new people.
             </p>
-            <ul className="list-none">
-              <li className="hover:text-blue-500 hover:font-semibold">
-                <Link href="https://www.github.com/marykasp">Github</Link>
+            <ul className="list-disc marker:text-blue-500">
+              <li className="hover:text-blue-500 hover:font-semibold text-blue-500 dark:text-blue-300">
+                <Link href="https://www.github.com/marykasp" target="_blank">
+                  Github
+                </Link>
+              </li>
+              <li className="hover:text-blue-500 hover:font-semibold text-blue-500 dark:text-blue-300">
+                <Link href="https://www.marykasparian.com" target="_blank">
+                  Portfolio
+                </Link>
               </li>
             </ul>
           </div>
+          <Image
+            src="/images/marykwolf.png"
+            alt="character drawing of mary with wolf by side"
+            width={400}
+            height={400}
+          />
         </div>
         <h3 className="text-xl font-semibold dark:text-white">
           From Scientist to Coder
@@ -52,7 +65,7 @@ const About = () => {
         <h3 className="font-medium tracking-wider uppercase text-blue-500 dark:text-blue-300">
           My Cozy Interests
         </h3>
-        <ol className="list-decimal flex flex-col gap-2">
+        <ol className="list-disc marker:text-blue-500 flex flex-col gap-2">
           <li>
             <span className="font-bold">Video Games</span>: Discovering hidden
             gems in cozy, immersive gaming worlds is my ultimate downtime

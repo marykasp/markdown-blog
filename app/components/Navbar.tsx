@@ -32,7 +32,7 @@ const Navbar = () => {
           </Link>
           <Link
             className="dark:text-white/90 dark:hover:text-white hover:text-blue-500"
-            href="https://www.linkedin.com/mary-kasparian"
+            href="https://www.linkedin.com/in/mary-kasparian"
             target="_blank"
           >
             <FaLinkedin />
